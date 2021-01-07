@@ -2,3 +2,5 @@ title: Francesco's website
 description: This is my website
 markdown: kramdown
 theme: jekyll-theme-primer
+
+permalink: :title
