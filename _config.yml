@@ -1,2 +1,4 @@
-name: Francesco's website
+title: Francesco's website
+description: This is my website
 markdown: kramdown
+theme: jekyll-theme-primer
