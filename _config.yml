@@ -1,6 +1,10 @@
-title: Francesco's website
-description: This is my website
+title: Francesco's blog
+description: My personal blog
 markdown: kramdown
-theme: jekyll-theme-primer
+#theme: jekyll-theme-primer
+theme: minima
+
+twitter_username: flosterzo
+github_username:  francescolosterzo
 
 permalink: /posts/:title
