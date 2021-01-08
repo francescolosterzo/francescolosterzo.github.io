@@ -1,11 +1,21 @@
 title: Francesco's blog
+author:
+  name: Francesco Lo Sterzo
+  email: francescolost@gmail.com
 description: My personal blog
 markdown: kramdown
 
-#theme: jekyll-theme-primer
-theme: minima
-
 twitter_username: flosterzo
 github_username:  francescolosterzo
+#stackoverflow_username: francescols
 
 permalink: /posts/:title
+
+#minima:
+#  social-links:
+#    twitter: flosterzo
+#    github: francescolosterzo
+#    stackoverflow: 10513250/francescols
+
+#theme: jekyll-theme-primer
+theme: minima
