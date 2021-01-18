@@ -3,7 +3,9 @@ author:
   name: Francesco Lo Sterzo
   email: francescolost@gmail.com
 description: My personal blog
+
 markdown: kramdown
+highlighter: rouge
 
 permalink: /posts/:title
 
@@ -12,5 +14,8 @@ minima:
     twitter: flosterzo
     github: francescolosterzo
     stackoverflow: 10513250/francescols
+
+plugins:
+  - jemoji
 
 theme: minima
