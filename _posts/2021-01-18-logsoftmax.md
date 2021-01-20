@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The art of craftsmanship
+title: The power of craftsmanship
 date: 2020-01-18
 ---
 
