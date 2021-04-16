@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The power of craftsmanship
-date: 2020-01-18
+date: 2021-01-18
 ---
 
 I am going through the fast.ai course [“Practical Deep Learning for coders”](https://course.fast.ai/), and I am liking it a lot. I might write something about it once I finish it, but long story short: if you are looking for something to get started on ML go ahead do it!
