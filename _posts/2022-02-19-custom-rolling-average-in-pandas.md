@@ -131,6 +131,4 @@ dtype: float64
 ## Conclusions
 The `weighted_mean` function allows to compute the weighted running average of some data, overcoming the constraint of having `min_periods` equals to size the window and handling missing data without affecting the results.
 
-The whole code undelying this post is in a [dedicated notebook](). Feel free to take a look at it, download it and tailor it to your needs.
-
-If you find a mistake or want to tell me something else get in touch on twitter [@francescolost](https://twitter.com/flosterzo)
+The whole code undelying this post is in a [dedicated notebook](https://github.com/francescolosterzo/francescolosterzo.github.io/blob/main/material/notebooks/rolling_weighted_average.ipynb). Feel free to take a look at it, download it and tailor it to your needs.
