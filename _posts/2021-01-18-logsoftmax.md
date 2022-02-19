@@ -82,13 +82,13 @@ Everything is set now, I just have to train the model and check how things go!
 
 ## It’s hard to face the reality
 
-![figure1](/images/logsoftmax_f1.png)
+![figure1](/material/images/logsoftmax_f1.png)
 
 Not so well … The accuracy drops at the very beginning of the training, then starts growing, but the growth is slow and after 40 epochs (which is not much in general, but in the course models are usually trained for 5-10 epochs) it reaches the top at 8.5%.
 
 As a comparison I trained a copy of the model with the built-in cross entropy function (i.e. the default loss function for multi-class classification problems) and here is what I get:
 
-![figure2](/images/logsoftmax_f2.png)
+![figure2](/material/images/logsoftmax_f2.png)
 
 So there is nothing wrong with the model, the problem is with the loss function! And this is very weird, because `myloss(...)` behaves exactly as expected when testing it by hand!
 
@@ -113,7 +113,7 @@ def myloss2(predictions, targets):
 
 Of course I ran straight to training the model using `myloss2(...)` as loss function and …
 
-![figure3](/images/logsoftmax_f3.png)
+![figure3](/material/images/logsoftmax_f3.png)
 
 … oh no!
 
@@ -139,7 +139,7 @@ Let’s see if this works …
 ## Long live the logarithms!
 Here is the accuracy for the 4 models together:
 
-![figure4](/images/logsoftmax_f4.png)
+![figure4](/material/images/logsoftmax_f4.png)
 
 The model with the log-based cross entropy performs as good as the one with the pytorch native cross entropy!
 
