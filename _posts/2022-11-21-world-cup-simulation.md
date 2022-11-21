@@ -46,7 +46,7 @@ I tested two different ways of obtaining it starting from the logistic of normal
 
 In the last three World Cups, an average of about 2.5 goals per match were scored. So for a given match between team1 and team2 I get lambdas as follows:
 
-$$\lambda_i = l_i * \textrm{average\_goals\_per\_match\_in\_past\_WCs}$$
+$$\lambda_i = l_i * \textrm{average\\_goals\\_per\\_match\\_in\\_past\\_WCs}$$
 
 As a second method I looked at the data from the 2018 World Cup and the FIFA scores and ranking as they were in 2018 right before the World Cup. I didn’t include data from more past World Cups because the calculation was updated in 2018, so the risk here is to use and mix data that are not consistent. I used this data to model the average goals scored by a team in a given match as a function of the logistic of normalized score difference. Here is the data: on the horizontal axis there is the logit-normalized-score-difference, on the vertical axis the actual number of goals scored by each team. The green faint “x”-s show the actual goals, the blue dots show the average number of goals taken in bins of the logit-normalized-score-difference.
 
