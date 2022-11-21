@@ -27,18 +27,18 @@ Here is just a summary of the whole process so far, for a match between team1 an
 
 $$n_1 = (s_1 - s_2)/\bar{d}$$
 
-$$n_2 = (s_2 - s_1)/\bar{d}\textrm{, i.e.} n_2 = -n_1$$
+$$n_2 = (s_2 - s_1)/\bar{d}\textrm{, i.e.\ } n_2 = -n_1$$
 
 $$l_1 = \textrm{logistic}(n_1) = 1 / (1 + e^{-n_1})$$
 
-$$l_2 = \textrm{logistic}(n_2) = 1 / (1 + e^{-n_2})\textrm{, i.e.} l_2 = 1-l_1$$
+$$l_2 = \textrm{logistic}(n_2) = 1 / (1 + e^{-n_2})\textrm{, i.e.\ } l_2 = 1-l_1$$
 
 where $\bar{d}$ is the average of the pairwise score difference.
 
 ## How to simulate a match
 In this wonderful book (and elsewhere too), it is shown how goals each team scores in a match are distributed as a Poisson distribution:
 
-$$P(n) = \frac{\lambda^n e^{-\lambda}{n!}$$
+$$P(n) = \frac{\lambda^n e^{-\lambda}}{n!}$$
 
 where $n$ is the number of goals, and $\lambda$ is the intensity of the process. In this context, $\lambda$ is the number of goals a team is expected to score in a match, and $n$ is the actual number of goals it can actually score, each with its own probability. $\lambda$ is the parameter we need for each team in order to be able to simulate a match: with the $\lambda$-s for the two teams, it is possible to simulate the goals scored using poisson processes. Simulating the same match a lot of times it is possible to get the actual probabilities for each team to win the match and for a draw just by counting how many times each team scores more than the other (or when they score the same amount of goals). With such a model that can provide probabilities for each outcome of a match (team1 wins / team2 wins / draw), it is reasonable to bet on the outcome with the highest probability.
 
@@ -46,7 +46,7 @@ I tested two different ways of obtaining it starting from the logistic of normal
 
 In the last three World Cups, an average of about 2.5 goals per match were scored. So for a given match between team1 and team2 I get lambdas as follows:
 
-$$\lambda_i = l_i * \textrm{average_goals_per_match_in_WC}$$
+$$\lambda_i = l_i * \textrm{average\_goals\_per\_match\_in\_WC}$$
 
 As a second method I looked at the data from the 2018 World Cup and the FIFA scores and ranking as they were in 2018 right before the World Cup. I didn’t include data from more past World Cups because the calculation was updated in 2018, so the risk here is to use and mix data that are not consistent. I used this data to model the average goals scored by a team in a given match as a function of the logistic of normalized score difference. Here is the data: on the horizontal axis there is the logit-normalized-score-difference, on the vertical axis the actual number of goals scored by each team. The green faint “x”-s show the actual goals, the blue dots show the average number of goals taken in bins of the logit-normalized-score-difference.
 
