@@ -13,7 +13,7 @@ While it is rather easy to place a bet on a match in which one of the teams is m
 Because of this I decided to use the FIFA National Teams ranking, which is based on a score that measures the strength of each team from the results of their matches (thanks Wikipedia for all the details). There are also other scores and rankings out there which would be interesting to explore, but I decided not to spend a lot of time evaluating and comparing the different options.
 Going through how the score for the National teams is computed is way beyond the scope of this exercise, but it is worth having a quick look:
 
-**TODO: FIGURE**
+![figure1](/material/images/FIFA-ranking-describe.png)
 
 The top team is Brazil with 1841, the worst is San Marino with 762. According to this score, the weakest team who qualified to the World Cup is Ghana, with a score of 1393.
 From the FIFA scores to relative strengths
@@ -50,14 +50,18 @@ $$\lambda_i = l_i * \textrm{average_goals_per_match_in_WC}$$
 
 As a second method I looked at the data from the 2018 World Cup and the FIFA scores and ranking as they were in 2018 right before the World Cup. I didn’t include data from more past World Cups because the calculation was updated in 2018, so the risk here is to use and mix data that are not consistent. I used this data to model the average goals scored by a team in a given match as a function of the logistic of normalized score difference. Here is the data: on the horizontal axis there is the logit-normalized-score-difference, on the vertical axis the actual number of goals scored by each team. The green faint “x”-s show the actual goals, the blue dots show the average number of goals taken in bins of the logit-normalized-score-difference.
 
-**TODO: FIGURES**
+![figure2](/material/images/FIFA-fit.png)
 
-The second figure shows the direct comparison of the two models for $\lambda$ as a function of the logit-normalized-score-difference: the fitted model has a lower slope, and in some sense it gives much more strength to the weaker teams: in a match between two teams with a huge difference in score, the weaker one will have a logit-normalized-score-difference rather close to 0. The fitted morel would assign to this team a lambda close to 1, the model based on the average number of goals per match would assign it a lambda close to 0.
+The figure below shows the direct comparison of the two models for $\lambda$ as a function of the logit-normalized-score-difference.
+
+![figure3](/material/images/FIFA-param-comparison.png)
+
+The fitted model has a lower slope, and in some sense it gives much more strength to the weaker teams: in a match between two teams with a huge difference in score, the weaker one will have a logit-normalized-score-difference rather close to 0. The fitted model would assign to this team a lambda close to 1, the model based on the average number of goals per match would assign it a lambda close to 0.
 
 ## “Calibration” and final tweaks
 How to choose between the different parameterizations? For each of them I simulated the whole group stage of the World Cup 2022 and for each match I measured the probabilities for the best team to win, the worst team to win and the probability of a draw. Then I compared these to the fraction of matches that ended with a win of the best team, a win of the worst team and a draw in all the matches of the 2018 World Cup. The comparison is shown below.
 
-**TODO: FIGURE**
+![figure4](/material/images/FIFA-calibration.png)
 
 It is quite clear that the parametrization obtained with the fit flattens the differences between the best and the worst team, as already discussed before. Interestingly, the two distributions of the probability of draw look quite similar. I will then drop the fit-based simulation.
 
@@ -222,9 +226,9 @@ I bet on the first and second team in the above rankings to go through to the pl
 
 Here is the full play-off stage from my simulation:
 
-**TODO: FIGURE**
+![figure5](/material/images/FIFA-playoff.png)
 
-Conclusions
+## Conclusions
 It has been a nice exercise that I set up in a few days. As mentioned above I am a bit disappointed that in the end I am simply betting on the team with the highest ranking in each match, while I was expecting to get something more advanced. On the other hand if you want to play it safe it is reasonable to always place your bets on the best team.
 
 After the World Cup I will compare my predictions to the actual results and see how bad this simulation is :slightly_smiling_face:
