@@ -6,11 +6,11 @@ date: 2022-11-21
 
 In my company we started a betting contest for the incoming World Cup. I often joined this kind of contests, always basing my bets on my gut feeling and always miserably failing. This time I decided to base my bets on something (hopefully) more sensible, and decided to simulate the World Cup from data.
 
-We are using Copabet, which wants you to place all your bets even for who goes through to the play-off stage and all the way to the final before the start of the World Cup.
+We are using [Copabet](https://www.copabet.com/), which wants you to place all your bets even for who goes through to the play-off stage and all the way to the final before the start of the World Cup.
 
 ## Where to start: team strength in numbers
 While it is rather easy to place a bet on a match in which one of the teams is much stronger than the others (e.g. Brazil - San Marino), it is much harder when you don’t know how to gauge the team's relative strength.
-Because of this I decided to use the FIFA National Teams ranking, which is based on a score that measures the strength of each team from the results of their matches (thanks Wikipedia for all the details). There are also other scores and rankings out there which would be interesting to explore, but I decided not to spend a lot of time evaluating and comparing the different options.
+Because of this I decided to use the [FIFA National Teams ranking](https://www.fifa.com/fifa-world-ranking/men), which is based on a score that measures the strength of each team from the results of their matches (thanks [Wikipedia for all the details](https://en.wikipedia.org/wiki/FIFA_Men%27s_World_Ranking)). There are also [other scores and rankings out there](https://www.eloratings.net/) which would be interesting to explore, but I decided not to spend a lot of time evaluating and comparing the different options.
 Going through how the score for the National teams is computed is way beyond the scope of this exercise, but it is worth having a quick look:
 
 ![figure1](/material/images/FIFA-ranking-describe.png)
@@ -36,7 +36,7 @@ $$l_2 = \textrm{logistic}(n_2) = 1 / (1 + e^{-n_2})\textrm{, i.e.\ } l_2 = 1-l_1
 where $\bar{d}$ is the average of the pairwise score difference.
 
 ## How to simulate a match
-In this wonderful book (and elsewhere too), it is shown how goals each team scores in a match are distributed as a Poisson distribution:
+In [this wonderful book](https://www.amazon.com/Soccermatics-Mathematical-Adventures-Pro-Bloomsbury/dp/1472924142) (and elsewhere too), it is shown how goals each team scores in a match are distributed as a Poisson distribution:
 
 $$P(n) = \frac{\lambda^n e^{-\lambda}}{n!}$$
 
@@ -48,7 +48,7 @@ In the last three World Cups, an average of about 2.5 goals per match were score
 
 $$\lambda_i = l_i * \textrm{average\\_goals\\_per\\_match\\_in\\_past\\_WCs}$$
 
-As a second method I looked at the data from the 2018 World Cup and the FIFA scores and ranking as they were in 2018 right before the World Cup. I didn’t include data from more past World Cups because the calculation was updated in 2018, so the risk here is to use and mix data that are not consistent. I used this data to model the average goals scored by a team in a given match as a function of the logistic of normalized score difference. Here is the data: on the horizontal axis there is the logit-normalized-score-difference, on the vertical axis the actual number of goals scored by each team. The green faint “x”-s show the actual goals, the blue dots show the average number of goals taken in bins of the logit-normalized-score-difference.
+As a second method I looked at the data from the 2018 World Cup and the FIFA scores and ranking as they were in 2018 right before the World Cup. I didn’t include data from more past World Cups because the calculation [was updated in 2018](https://en.wikipedia.org/wiki/FIFA_Men%27s_World_Ranking#2018_ranking_system_update), so the risk here is to use and mix data that are not consistent. I used this data to model the average goals scored by a team in a given match as a function of the logistic of normalized score difference. Here is the data: on the horizontal axis there is the logit-normalized-score-difference, on the vertical axis the actual number of goals scored by each team. The green faint “x”-s show the actual goals, the blue dots show the average number of goals taken in bins of the logit-normalized-score-difference.
 
 ![figure2](/material/images/FIFA-fit.png)
 
