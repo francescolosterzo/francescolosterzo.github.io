@@ -86,56 +86,56 @@ In the history of the World Cup only once the hosting country did not make it th
 ## Output
 Here is the output of the simulation:
 
-| group | match | P(TEAM1 WINS) | P(DRAW) | P(TEAM2 WINS) |
-|-------|-------|---------------|---------|---------------|
-| A | Senegal-Netherlands | 25.7% | 25.7% | 48.6% |
-| A | Ecuador-Netherlands | 16.2% | 23.7% | 60.1% |
-| A | Qatar-Netherlands | 15.5% | 21.3% | 63.1% |
-| A | Ecuador-Senegal | 25.1% | 26.2% | 48.7% |
-| A | Qatar-Senegal | 23.5% | 25.4% | 51.2% |
-| A | Qatar-Ecuador | 33.7% | 27.0% | 39.4% |
-| B | United States-England | 26.0% | 26.1% | 47.9% |
-| B | Wales-England | 21.7% | 25.3% | 53.0% |
-| B | Iran-England | 22.4% | 25.6% | 52.0% |
-| B | Wales-United States | 31.9% | 26.8% | 41.4% |
-| B | Iran-United States | 29.0% | 27.2% | 43.8% |
-| B | Iran-Wales | 35.7% | 27.9% | 36.4% |
-| C | Mexico-Argentina | 23.6% | 25.7% | 50.7% |
-| C | Poland-Argentina | 17.2% | 23.8% | 59.0% |
-| C | Saudi Arabia-Argentina | 10.8% | 19.9% | 69.3% |
-| C | Poland-Mexico | 27.5% | 25.2% | 47.3% |
-| C | Saudi Arabia-Mexico | 18.8% | 23.1% | 58.1% |
-| C | Saudi Arabia-Poland | 24.9% | 25.6% | 49.5% |
-| D | Denmark-France | 28.6% | 26.5% | 44.9% |
-| D | Tunisia-France | 15.1% | 23.1% | 61.8% |
-| D | Australia-France | 14.2% | 23.6% | 62.2% |
-| D | Tunisia-Denmark | 21.7% | 25.2% | 53.2% |
-| D | Australia-Denmark | 21.5% | 24.7% | 53.8% |
-| D | Australia-Tunisia | 33.8% | 27.3% | 39.0% |
-| E | Germany-Spain | 30.7% | 26.5% | 42.8% |
-| E | Japan-Spain | 20.4% | 25.8% | 53.9% |
-| E | Costa Rica-Spain | 17.7% | 24.4% | 58.0% |
-| E | Japan-Germany | 27.2% | 26.3% | 46.6% |
-| E | Costa Rica-Germany | 22.0% | 25.8% | 52.2% |
-| E | Costa Rica-Japan | 30.5% | 26.6% | 42.9% |
-| F | Croatia-Belgium | 20.7% | 24.7% | 54.6% |
-| F | Morocco-Belgium | 15.7% | 23.6% | 60.7% |
-| F | Canada-Belgium | 11.1% | 20.4% | 68.5% |
-| F | Morocco-Croatia | 27.7% | 26.7% | 45.5% |
-| F | Canada-Croatia | 20.7% | 25.6% | 53.7% |
-| F | Canada-Morocco | 29.0% | 25.5% | 45.5% |
-| G | Switzerland-Brazil | 17.9% | 23.2% | 58.9% |
-| G | Serbia-Brazil | 13.7% | 21.2% | 65.1% |
-| G | Cameroon-Brazil | 9.9% | 19.6% | 70.5% |
-| G | Serbia-Switzerland | 30.2% | 27.0% | 42.7% |
-| G | Cameroon-Switzerland | 21.6% | 25.1% | 53.2% |
-| G | Cameroon-Serbia | 26.9% | 27.1% | 46.0% |
-| H | Uruguay-Portugal | 32.7% | 27.4% | 39.9% |
-| H | Korea Republic-Portugal | 22.9% | 25.7% | 51.4% |
-| H | Ghana-Portugal | 13.7% | 20.7% | 65.6% |
-| H | Korea Republic-Uruguay | 26.6% | 26.3% | 47.1% |
-| H | Ghana-Uruguay | 15.1% | 23.0% | 61.8% |
-| H | Ghana-Korea Republic | 24.2% | 26.8% | 49.0% |
+| group | match | P(TEAM1 WINS) | P(DRAW) | P(TEAM2 WINS) | my pick |
+|-------|-------|---------------|---------|---------------|---------|
+| A | Senegal-Netherlands | 25.7% | 25.7% | 48.6% | Netherlands |
+| A | Ecuador-Netherlands | 16.2% | 23.7% | 60.1% | Netherlands |
+| A | Qatar-Netherlands | 15.5% | 21.3% | 63.1% | Netherlands |
+| A | Ecuador-Senegal | 25.1% | 26.2% | 48.7% | Senegal |
+| A | Qatar-Senegal | 23.5% | 25.4% | 51.2% | Draw |
+| A | Qatar-Ecuador | 33.7% | 27.0% | 39.4% | Qatar |
+| B | United States-England | 26.0% | 26.1% | 47.9% | England |
+| B | Wales-England | 21.7% | 25.3% | 53.0% | England |
+| B | Iran-England | 22.4% | 25.6% | 52.0% | England |
+| B | Wales-United States | 31.9% | 26.8% | 41.4% | United States |
+| B | Iran-United States | 29.0% | 27.2% | 43.8% | United States |
+| B | Iran-Wales | 35.7% | 27.9% | 36.4% | Draw |
+| C | Mexico-Argentina | 23.6% | 25.7% | 50.7% | Argentina |
+| C | Poland-Argentina | 17.2% | 23.8% | 59.0% | Argentina |
+| C | Saudi Arabia-Argentina | 10.8% | 19.9% | 69.3% | Argentina |
+| C | Poland-Mexico | 27.5% | 25.2% | 47.3% | Mexico |
+| C | Saudi Arabia-Mexico | 18.8% | 23.1% | 58.1% | Mexico |
+| C | Saudi Arabia-Poland | 24.9% | 25.6% | 49.5% | Poland |
+| D | Denmark-France | 28.6% | 26.5% | 44.9% | France |
+| D | Tunisia-France | 15.1% | 23.1% | 61.8% | France |
+| D | Australia-France | 14.2% | 23.6% | 62.2% | France |
+| D | Tunisia-Denmark | 21.7% | 25.2% | 53.2% | Denmark |
+| D | Australia-Denmark | 21.5% | 24.7% | 53.8% | Denmark |
+| D | Australia-Tunisia | 33.8% | 27.3% | 39.0% | Draw |
+| E | Germany-Spain | 30.7% | 26.5% | 42.8% | Spain |
+| E | Japan-Spain | 20.4% | 25.8% | 53.9% | Spain |
+| E | Costa Rica-Spain | 17.7% | 24.4% | 58.0% | Spain |
+| E | Japan-Germany | 27.2% | 26.3% | 46.6% | Germany |
+| E | Costa Rica-Germany | 22.0% | 25.8% | 52.2% | Germany |
+| E | Costa Rica-Japan | 30.5% | 26.6% | 42.9% | Japan |
+| F | Croatia-Belgium | 20.7% | 24.7% | 54.6% | Belgium |
+| F | Morocco-Belgium | 15.7% | 23.6% | 60.7% | Belgium |
+| F | Canada-Belgium | 11.1% | 20.4% | 68.5% | Belgium |
+| F | Morocco-Croatia | 27.7% | 26.7% | 45.5% | Croatia |
+| F | Canada-Croatia | 20.7% | 25.6% | 53.7% | Croatia |
+| F | Canada-Morocco | 29.0% | 25.5% | 45.5% | Morocco |
+| G | Switzerland-Brazil | 17.9% | 23.2% | 58.9% | Brazil |
+| G | Serbia-Brazil | 13.7% | 21.2% | 65.1% | Brazil |
+| G | Cameroon-Brazil | 9.9% | 19.6% | 70.5% | Brazil |
+| G | Serbia-Switzerland | 30.2% | 27.0% | 42.7% | Switzerland |
+| G | Cameroon-Switzerland | 21.6% | 25.1% | 53.2% | Switzerland |
+| G | Cameroon-Serbia | 26.9% | 27.1% | 46.0% | Serbia |
+| H | Uruguay-Portugal | 32.7% | 27.4% | 39.9% | Draw |
+| H | Korea Republic-Portugal | 22.9% | 25.7% | 51.4% | Portugal |
+| H | Ghana-Portugal | 13.7% | 20.7% | 65.6% | Portugal |
+| H | Korea Republic-Uruguay | 26.6% | 26.3% | 47.1% | Uruguay |
+| H | Ghana-Uruguay | 15.1% | 23.0% | 61.8% | Uruguay |
+| H | Ghana-Korea Republic | 24.2% | 26.8% | 49.0% | Korea Republic |
 
 It has to be kept in mind that all of the above is based on the FIFA score before the World Cup and that it can’t take into account everything that will happen from now on: last-minute injuries, the overall condition of a team, etc. The most important factor not taken into account here is how the results of the first few matches influences the rest of the competition.
 
@@ -232,3 +232,5 @@ Here is the full play-off stage from my simulation:
 It has been a nice exercise that I set up in a few days. As mentioned above I am a bit disappointed that in the end I am simply betting on the team with the highest ranking in each match, while I was expecting to get something more advanced. On the other hand if you want to play it safe it is reasonable to always place your bets on the best team.
 
 After the World Cup I will compare my predictions to the actual results and see how bad this simulation is :slightly_smiling_face:
+
+All the code I developed and used for this simulation is [here](https://github.com/francescolosterzo/WorldCup2022).
