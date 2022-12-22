@@ -17,13 +17,13 @@ Going through how the score for the National teams is computed is way beyond the
 
 The top team is Brazil with 1841, the worst is San Marino with 762. According to this score, the weakest team who qualified to the World Cup is Ghana, with a score of 1393.
 From the FIFA scores to relative strengths
-As mentioned above, I want to base my bets on the relative strength of the teams in each match and in order to do this I started testing a few ways to combine the opponent’s scores into a meaningful metric, and I already found something interesting: for a given match of team1 vs team2 I divided each team’s score ( $$s_i$$ ) by the sum of the scores, i.e. $ p_i = s_i / (s_1 + s_2) $. The original idea was to use the $ p_i $-s computed this way as probabilities of winning for each team in some kind of match simulation (details are given below, but for now you can imagine it as a coin flip with probabilities $ p_1 $ and $ p_2 $ for the two teams). In order to get a feeling of how this performs I tested this on Brazil - Ghana, i.e. an hypothetical match between the best and the worst teams in the World Cup (according to the FIFA ranking). It turns out Ghana has a 43% chance of winning this match. Seems a bit too much.
+As mentioned above, I want to base my bets on the relative strength of the teams in each match and in order to do this I started testing a few ways to combine the opponent’s scores into a meaningful metric, and I already found something interesting: for a given match of team1 vs team2 I divided each team’s score ( $$s_i$$ ) by the sum of the scores, i.e. $$p_i = s_i / (s_1 + s_2)$$. The original idea was to use the $$p_i$$-s computed this way as probabilities of winning for each team in some kind of match simulation (details are given below, but for now you can imagine it as a coin flip with probabilities $$p_1$$ and $$p_2$$ for the two teams). In order to get a feeling of how this performs I tested this on Brazil - Ghana, i.e. an hypothetical match between the best and the worst teams in the World Cup (according to the FIFA ranking). It turns out Ghana has a 43% chance of winning this match. Seems a bit too much.
 This might happen for a few reasons, if I had to guess I would say on one hand this reflects that the teams that made it to the World Cup are in general not that bad, they had to qualify for it and, with some outliers (Italy, I am looking at you), the best teams in each continent are there. On the other hand every now and then there are discussions about the FIFA ranking not being very reliable and giving too high a score to some random team. One way or another, all the scores are somewhat squeezed towards high values.
 
 As mentioned in the previous section, it seems reasonable to use the relative strength of the two opponents for a given match, so I decided to start from the difference of the two scores and to normalize it by the average pairwise difference of all the scores. This normalized score difference is then > 1 for a match in which one team is much stronger than the other (i.e. more than the average difference between two teams in the FIFA ranking) and < 1 for a match between two teams that are rather similar.
 
 As a final step, I took the logistic function of the above normalized score basically because I wanted to translate the normalized score into a probability, for reasons that will be clarified in the next section.
-Here is just a summary of the whole process so far, for a match between team1 and team2 with scores $s_1$ and $s_2$, respectively:
+Here is just a summary of the whole process so far, for a match between team1 and team2 with scores $$s_1$$ and $$s_2$$, respectively:
 
 $$n_1 = (s_1 - s_2)/\bar{d}$$
 
@@ -33,14 +33,14 @@ $$l_1 = \textrm{logistic}(n_1) = 1 / (1 + e^{-n_1})$$
 
 $$l_2 = \textrm{logistic}(n_2) = 1 / (1 + e^{-n_2})\textrm{, i.e.\ } l_2 = 1-l_1$$
 
-where $\bar{d}$ is the average of the pairwise score difference.
+where $$\bar{d}$$ is the average of the pairwise score difference.
 
 ## How to simulate a match
 In [this wonderful book](https://www.amazon.com/Soccermatics-Mathematical-Adventures-Pro-Bloomsbury/dp/1472924142) (and elsewhere too), it is shown how goals each team scores in a match are distributed as a Poisson distribution:
 
 $$P(n) = \frac{\lambda^n e^{-\lambda}}{n!}$$
 
-where $n$ is the number of goals, and $\lambda$ is the intensity of the process. In this context, $\lambda$ is the number of goals a team is expected to score in a match, and $n$ is the actual number of goals it can actually score, each with its own probability. $\lambda$ is the parameter we need for each team in order to be able to simulate a match: with the $\lambda$-s for the two teams, it is possible to simulate the goals scored using poisson processes. Simulating the same match a lot of times it is possible to get the actual probabilities for each team to win the match and for a draw just by counting how many times each team scores more than the other (or when they score the same amount of goals). With such a model that can provide probabilities for each outcome of a match (team1 wins / team2 wins / draw), it is reasonable to bet on the outcome with the highest probability.
+where $$n$$ is the number of goals, and $$\lambda$$ is the intensity of the process. In this context, $$\lambda$$ is the number of goals a team is expected to score in a match, and $$n$$ is the actual number of goals it can actually score, each with its own probability. $$\lambda$$ is the parameter we need for each team in order to be able to simulate a match: with the $$\lambda$$-s for the two teams, it is possible to simulate the goals scored using poisson processes. Simulating the same match a lot of times it is possible to get the actual probabilities for each team to win the match and for a draw just by counting how many times each team scores more than the other (or when they score the same amount of goals). With such a model that can provide probabilities for each outcome of a match (team1 wins / team2 wins / draw), it is reasonable to bet on the outcome with the highest probability.
 
 I tested two different ways of obtaining it starting from the logistic of normalized score difference from the previous section.
 
@@ -52,7 +52,7 @@ As a second method I looked at the data from the 2018 World Cup and the FIFA sco
 
 ![figure2](/material/images/FIFA-fit.png)
 
-The figure below shows the direct comparison of the two models for $\lambda$ as a function of the logit-normalized-score-difference.
+The figure below shows the direct comparison of the two models for $$\lambda$$ as a function of the logit-normalized-score-difference.
 
 ![figure3](/material/images/FIFA-param-comparison.png)
 
